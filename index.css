@@ -1,0 +1,32 @@
+.buttonDiv{
+
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+
+    padding: 20px;
+    margin: 10px;
+    font-size: 25px;
+    background: #000;
+    color: white;
+    border-radius: 20px;
+
+}
+
+button:hover{
+
+    background: white;
+    color: black;
+
+}
+h1{
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Page</title>
+    <link rel="stylesheet" href="./data.css">
+</head>
+<body>
+    <nav>
+        <button  onclick="loginRedirect()" >Login</button>
+        <button onclick="dataRedirect()" >Data</button>
+        <button onclick="reportRedirect()" >Reports</button>
+     </nav>
+   
+     <div class="functionalityContainer">
+    <label for="">Sort By Age</label>
+      <select name="" id="sortAge" onclick="SortByAge()">
+        <option value=""></option>
+        <option value="asc">Assending</option>
+        <option value="desc">Desending</option>
+      </select>
+
+      <label for="">Filter by Gender</label>
+      <select name="" id="sortGender" onclick="SortByGender()">
+        <option value=""></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      
+      <label for="">Search by name</label>
+      <input type="text" placeholder="Enter Name" id="searchByName" >
+
+     </div>
+
+   <div class="dataContainer">
+
+   </div>
+</body>
+</html>
+
+<script src="./data.js"></script>

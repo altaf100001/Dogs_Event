@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Page</title>
+    <link rel="stylesheet" href="./reports.css">
+</head>
+<body>
+    <nav>
+        <button  onclick="loginRedirect()" >Login</button>
+        <button onclick="dataRedirect()" >Data</button>
+        <button onclick="reportRedirect()" >Reports</button>
+     </nav>
+    <div class="reportContainer">
+        <table>
+            <thead>
+              <tr>
+                <th>Total Number of Dogs</th>
+                <th>Number of Female</th>
+                <th>Number of Male</th>
+                <th>Average Age Group</th>
+             
+              </tr>
+            </thead>
+            <tbody id="body"></tbody>
+          </table>
+    </div>
+</body>
+</html>
+<script src="./reports.js"></script>

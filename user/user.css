@@ -1,0 +1,19 @@
+
+.userContainer{
+
+    border: 1px solid black;
+  width: 30%;
+  height: auto;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userNavigate{
+ /* border: 1px solid red; */
+ display: flex;
+ align-items: center;
+ justify-content:center ;
+ margin: 20px;
+}

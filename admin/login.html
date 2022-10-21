@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .formContainer{
+            border: 1px solid black;
+            padding: 20px;
+            width: 40%;
+            margin: auto;
+        }
+        nav{
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        nav>button{
+
+            padding: 10px;
+            border-radius: 10px;
+            background: #000;
+            color: white;
+
+
+        }
+        nav>button:hover{
+
+            padding: 10px;
+            border-radius: 10px;
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+
+
+        }
+    </style>
+</head>
+<body>
+ <nav>
+    <button  onclick="loginRedirect()" >Login</button>
+    <button onclick="dataRedirect()" >Data</button>
+    <button onclick="reportRedirect()" >Reports</button>
+ </nav>
+
+    <div class="formContainer">
+        <h1>Login</h1>
+    <form action="">
+        <label for="">Email</label><input type="email" id="email">
+        <label for="">Pasword</label><input type="password" id="password">
+        <input type="submit">
+    </form>
+    <div class="message">
+
+    </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+document.querySelector("form").addEventListener("submit",login)
+
+function login(){
+event.preventDefault()
+let data = {}
+ let email = document.querySelector("#email").value
+let password = document.querySelector("#password").value
+
+// eve.holt@reqres.in
+// cityslicka
+document.querySelector(".message").innerHTML=""
+let p = document.createElement("p")
+
+document.querySelector(".message").append(p)
+
+data["email"] = email
+data["password"] = password
+p.innerText="Loading..."
+fetch('https://reqres.in/api/login', {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+ 
+})
+  .then((response) => response.json())
+  .then((data) => {
+   if(data.error){
+    p.innerText="Error"
+   }
+   if(data.token){
+    p.innerText=""
+       console.log('Success:', data);
+       localStorage.setItem("dogtoken",JSON.stringify(data.token))
+       window.location.href="./data.html"
+    
+   }
+  })
+  .catch((error) => {
+    
+    console.error('Error:', error);
+  })
+
+}
+
+
+
+
+// Navigation Functions
+
+
+function loginRedirect(){
+    window.location.href="./login.html"
+    
+}
+
+function dataRedirect(){
+let token = JSON.parse(localStorage.getItem("dogtoken")) 
+if(token){
+
+    window.location.href="./data.html"
+}else{
+    window.location.href="./login.html"
+}
+}
+
+function reportRedirect(){
+
+    let token = JSON.parse(localStorage.getItem("dogtoken")) 
+if(token){
+
+    window.location.href="./reports.html"
+}else{
+    window.location.href="./login.html"
+}
+
+}
+
+
+
+
+
+
+// Navigation Functions
+
+
+
+
+
+
+</script>

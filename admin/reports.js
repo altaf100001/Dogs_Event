@@ -29,7 +29,7 @@ if(token){
 
 function getdata(){
 
-    fetch('https://mock5dogdata.herokuapp.com/dogs')
+    fetch('https://apimockeradnanchicken.onrender.com/dogsEvent')
   .then((response) => response.json())
   .then((data) => displayData(data));
 

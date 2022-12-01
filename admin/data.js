@@ -29,7 +29,7 @@ if(token){
 
 function getdata(){
 
-    fetch('https://mock5dogdata.herokuapp.com/dogs')
+    fetch('https://apimockeradnanchicken.onrender.com/dogsEvent')
   .then((response) => response.json())
   .then((data) => displayData(data));
 
@@ -87,7 +87,7 @@ function displayData(data){
 
 function myfunction2(el){
 
-    fetch(`https://mock5dogdata.herokuapp.com/dogs/${el.id}`, {
+    fetch(`https://apimockeradnanchicken.onrender.com/dogsEvent/${el.id}`, {
   method: 'DELETE',
 })
 .then(res => res.text()) // or res.json()
@@ -105,7 +105,7 @@ function SortByAge(){
     
    let val =  document.querySelector("#sortAge").value
 //    console.log(val)
-   fetch(`https://mock5dogdata.herokuapp.com/dogs?_sort=age&_order=${val}`)
+   fetch(`https://apimockeradnanchicken.onrender.com/dogsEvent?_sort=age&_order=${val}`)
   .then((response) => response.json())
   .then((data) => displayData(data));
 
@@ -116,7 +116,7 @@ function SortByGender(){
 
    let val =  document.querySelector("#sortGender").value
 //    console.log(val)
-   fetch(`https://mock5dogdata.herokuapp.com/dogs?gender=${val}`)
+   fetch(`https://apimockeradnanchicken.onrender.com/dogsEvent?gender=${val}`)
    .then((response) => response.json())
    .then((data) => displayData(data));
 }
@@ -131,7 +131,7 @@ function searchName(){
        console.log(val)
 
 
-       fetch(`https://mock5dogdata.herokuapp.com/dogs`)
+       fetch(`https://apimockeradnanchicken.onrender.com/dogsEvent`)
        .then((response) => response.json())
        .then((data) => displayData(data));
 

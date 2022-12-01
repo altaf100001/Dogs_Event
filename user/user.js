@@ -24,7 +24,7 @@ obj["age"] = age
 obj["gender"] = gender
 obj["place"] = place
 
-fetch('https://mock5dogdata.herokuapp.com/dogs', {
+fetch('https://apimockeradnanchicken.onrender.com/dogsEvent', {
   method: 'POST', 
   headers: {
     'Content-Type': 'application/json',
